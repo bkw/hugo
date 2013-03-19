@@ -1,0 +1,19 @@
+{
+  "name": "bulb",
+  "description": "Yet another node interface for philips hue",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/bkw/node-bulb.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "dependencies": {
+    "request": "~2.16.6",
+    "async": "~0.2.6"
+  },
+  "devDependencies": {
+    "tap": "~0.4.0"
+  }
+}

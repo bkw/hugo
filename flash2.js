@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-var join = require('path').join
-  , Bridge = require(join(__dirname, 'lib', 'bridge'))
+var Bridge = require('./index').Bridge
   , async = require('async')
   ;
 

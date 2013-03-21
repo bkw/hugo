@@ -13,11 +13,18 @@ function wait(howLong, cb) {
 
 new Bridge('10.11.100.15', 'newdeveloper').on('ready', function (bridge) {
     var tasks = [],
-        bulb = bridge.getBulb(3);
-    console.log(bulb);
+        kitchen = bridge.getBulb(3),
+        sofa = bridge.getBulb(1);
     process.argv.slice(2).forEach(function (col) {
-        tasks.push(async.apply(bulb.setColor.bind(bulb), col, 5));
-        tasks.push(async.apply(wait, 500));
+        tasks.push(
+            function (cb) {
+                async.parallel([
+                    async.apply(kitchen.setColor.bind(kitchen), col, 2),
+                    async.apply(sofa.setColor.bind(sofa), col, 2)
+                ], cb);
+            }
+        );
+        tasks.push(async.apply(wait, 1000));
     });
 
     async.series(

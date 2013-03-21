@@ -7,7 +7,7 @@ Yet another node.js module for philips hue.
 Example
 -------
 
-    var Bridge = require('bulb).Bridge;
+    var Bridge = require('bulb').Bridge;
 
     new Bridge('192.168.x.y', 'someuser')
     .on('ready', function (bridge) {

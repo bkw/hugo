@@ -11,7 +11,7 @@ function wait(howLong, cb) {
     setTimeout(cb, howLong);
 }
 
-new Bridge('10.11.100.13', 'newdeveloper').on('ready', function (bridge) {
+new Bridge('10.11.100.15', 'newdeveloper').on('ready', function (bridge) {
     var tasks = [],
         bulb = bridge.getBulb(3);
     console.log(bulb);

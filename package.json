@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "request": "~2.16.6",
-    "async": "~0.2.6"
+    "async": "~0.2.6",
+    "color": "~0.4.2"
   },
   "devDependencies": {
     "tap": "~0.4.0"

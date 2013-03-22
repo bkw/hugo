@@ -1,20 +1,21 @@
 #!/usr/bin/env node
 'use strict';
 
-var Bridge = require('../index').Bridge
-  , async = require('async')
-  ;
+var bridge = require('../index').Bridge(),
+    async = require('async'),
+    colors = (process.argv.length > 2) ? process.argv.slice(2)
+                                     : ['red', 'green', 'blue'];
 
 
 function wait(howLong, cb) {
     setTimeout(cb, howLong);
 }
 
-new Bridge().on('ready', function (bridge) {
+bridge.on('ready', function () {
     var tasks = [],
         bulbs = bridge.getBulbs();
 
-    process.argv.slice(2).forEach(function (col) {
+    colors.forEach(function (col) {
         var subtasks = [];
         bulbs.forEach(function (b) {
             subtasks.push(async.apply(b.flash.bind(b), col));

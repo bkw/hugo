@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-var Bridge = require('../index').Bridge
+var bridge = require('../index').Bridge()
   , async = require('async')
   ;
 
@@ -10,7 +10,7 @@ function wait(howLong, cb) {
     setTimeout(cb, howLong);
 }
 
-new Bridge().on('ready', function (bridge) {
+bridge.on('ready', function () {
     var tasks = [],
         bulbs = bridge.getBulbs();
 

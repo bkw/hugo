@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 
-var Bridge = require('../index').Bridge;
+var bridge = require('../index').Bridge();
 var timeout = process.argv[2] || 10;
 
-new Bridge().on('ready', function (bridge) {
+bridge.on('ready', function () {
     bridge.getBulbsActive().forEach(function (bulb) {
         bulb.set({bri: 0, transitiontime: timeout * 10});
         setTimeout(function () {

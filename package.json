@@ -1,11 +1,20 @@
 {
+  "author": "Bernhard K. Weisshuhn <bkw@codingforce.com>",
   "name": "hugo",
-  "description": "Yet another node interface for philips hue",
-  "version": "0.0.0",
+  "description": "Yet another node.js interface for philips hue",
+  "version": "0.0.1",
   "repository": {
+    "type" : "git",
     "url": "git://github.com/bkw/hugo.git"
   },
-  "main": "index.js",
+  "keywords": [
+    "philips",
+    "hue",
+    "lighting",
+    "home automation",
+    "automation"
+  ],
+  "main": "./index",
   "dependencies": {
     "request": "~2.16.6",
     "async": "~0.2.6",

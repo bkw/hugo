@@ -26,3 +26,22 @@ If you leave out the ip address, the address will be read from the environment
 variable `HUE_HOST`. If no such variable exists, the bridge will be discovered
 over upnp.
 This is very hackish and experimental and obviously slower than specifying it.
+
+Debugging
+---------
+To see what is going on behind the scenes, you can enable debugging by
+setting the environment variable `DEBUG` to any of the following:
+
+* hugo.bridge
+* hugo.lightstate
+* hugo.color
+* hugo.discovery
+
+Multiple values can be separated by commas. Alternatively you can also specify `hugo.*` or even `*
+
+Example:
+
+    % DEBUG=hugo.color node demos/series.js red blue white
+    % DEBUG=hugo.lightstate,hugo.bridge node demos/flash.js
+    % DEBUG='hugo.*' node demos/fadeout.js 3
+

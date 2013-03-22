@@ -7,6 +7,6 @@ discover(function (err, address) {
     if (err) {
         throw new Error(err);
     }
-    console.log('Found a bridge at', address);
+    console.log('export HUE_HOST=' + address);
 });
 

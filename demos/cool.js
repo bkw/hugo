@@ -3,7 +3,7 @@
 
 var Bridge = require('../index').Bridge;
 
-new Bridge('newdeveloper').on('ready', function (bridge) {
-    bridge.setAllActive({ct: 153});
+new Bridge().on('ready', function (bridge) {
+    bridge.setAllActive({ct: 153, bri: 254});
 });
 

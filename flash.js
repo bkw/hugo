@@ -10,7 +10,7 @@ function wait(howLong, cb) {
     setTimeout(cb, howLong);
 }
 
-new Bridge('10.11.100.17', 'newdeveloper').on('ready', function (bridge) {
+new Bridge('newdeveloper').on('ready', function (bridge) {
     var tasks = [],
         kitchen = bridge.getBulb(3),
         sofa = bridge.getBulb(1);

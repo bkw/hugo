@@ -4,7 +4,7 @@
   "description": "Yet another node.js interface for philips hue",
   "version": "0.0.1",
   "repository": {
-    "type" : "git",
+    "type": "git",
     "url": "git://github.com/bkw/hugo.git"
   },
   "keywords": [

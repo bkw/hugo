@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-var Bridge = require('./index').Bridge
+var Bridge = require('../index').Bridge
   , async = require('async')
   ;
 
@@ -12,17 +12,16 @@ function wait(howLong, cb) {
 
 new Bridge('newdeveloper').on('ready', function (bridge) {
     var tasks = [],
-        kitchen = bridge.getBulb(3),
-        sofa = bridge.getBulb(1);
+        bulbs = bridge.getBulbs();
+
     process.argv.slice(2).forEach(function (col) {
-        tasks.push(
-            function (cb) {
-                async.parallel([
-                    async.apply(kitchen.setColor.bind(kitchen), col, 2),
-                    async.apply(sofa.setColor.bind(sofa), col, 2)
-                ], cb);
-            }
-        );
+        var subtasks = [];
+
+        bulbs.forEach(function (b) {
+            subtasks.push(async.apply(b.setColor.bind(b), col, 2));
+        });
+
+        tasks.push(async.apply(async.parallel, subtasks));
         tasks.push(async.apply(wait, 1000));
     });
     tasks.pop();

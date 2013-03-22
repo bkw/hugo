@@ -1,14 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 
-var Bridge = require('./index').Bridge;
+var Bridge = require('../index').Bridge;
 
 new Bridge('newdeveloper').on('ready', function (bridge) {
-    Object.keys(bridge.bulbs).filter(function (b) {
-        return bridge.bulbs[b].state.on;
-    }).map(function (b) {
-        cycle(bridge.getBulb(b));
-    });
+    bridge.getBulbsActive().map(cycle);
 });
 
 function cycle(bulb) {

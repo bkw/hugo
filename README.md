@@ -27,6 +27,29 @@ variable `HUE_HOST`. If no such variable exists, the bridge will be discovered
 over upnp.
 This is very hackish and experimental and obviously slower than specifying it.
 
+Getting Started
+---------------
+You need a valid user to connect to your bridge. If you do not know one,
+hugo can create one for you:
+
+    npm run-script create-user
+
+If you installed hugo as a module via npm, you'll have to specify hugo
+as the source for the script:
+
+    npm run-script hugo create-user
+
+The script will prompt you to press the link-button on the bridge.
+On Success it will echo the newly created username like this:
+
+    HUE_USER=2fabf3b4156019ef3c57c9dc1cda2757
+
+You can export this variable in your shell profile or set it when
+invoking programs using hugo. Like this:
+
+    HUE_USER=2fabf3b4156019ef3c57c9dc1cda2757 node myHugoApp.js
+
+
 Debugging
 ---------
 To see what is going on behind the scenes, you can enable debugging by

@@ -7,4 +7,6 @@
 ==================
 
   * better error handling for missing or wrong username
+  * added demo/repl.js
+  * added script to create a new user
 

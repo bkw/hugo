@@ -1,5 +1,5 @@
-node-bulb
-=========
+hugo
+====
 
 Yet another node.js module for philips hue.
 
@@ -7,7 +7,7 @@ Yet another node.js module for philips hue.
 Example
 -------
 
-    var bridge = require('bulb').Bridge('someuser', '192.168.x.x');
+    var bridge = require('hugo').Bridge('someuser', '192.168.x.x');
 
     bridge.on('ready', function () {
         var bulb = bridge.getBulb(1);

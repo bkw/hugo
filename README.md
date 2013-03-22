@@ -1,12 +1,10 @@
 hugo
 ====
-
 Yet another node.js module for philips hue.
 
 
 Example
 -------
-
     var bridge = require('hugo').Bridge('someuser', '192.168.x.x');
 
     bridge.on('ready', function () {

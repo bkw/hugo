@@ -6,6 +6,7 @@
     "debug": false,
     "devel": true,
     "eqeqeq": true,
+    "expr": true,
     "evil": false,
     "forin": true,
     "immed": true,
